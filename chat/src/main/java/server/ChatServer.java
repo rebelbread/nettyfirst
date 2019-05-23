@@ -36,7 +36,7 @@ public class ChatServer {
                     })
                     .option(ChannelOption.SO_BACKLOG, 128)
                     .childOption(ChannelOption.SO_KEEPALIVE, true);
-
+            System.out.println("SimpleChatServer 启动了");
             ChannelFuture f = b.bind(8080).sync();
             f.channel().closeFuture().sync();
         }finally {
@@ -46,5 +46,8 @@ public class ChatServer {
 
     }
 
+    public static void main(String[] args) throws InterruptedException {
+        new ChatServer().run();
+    }
 
 }
