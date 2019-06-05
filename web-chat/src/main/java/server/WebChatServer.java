@@ -22,7 +22,7 @@ public class WebChatServer {
                     .option(ChannelOption.SO_BACKLOG, 128)
                     .childOption(ChannelOption.SO_KEEPALIVE, true);
             System.out.println("服务器启动");
-            ChannelFuture f = b.bind(8080).sync();
+            ChannelFuture f = b.bind(8082).sync();
             f.channel().closeFuture().sync();
         }finally {
             parentGroup.shutdownGracefully();
